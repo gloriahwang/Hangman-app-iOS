@@ -24,6 +24,30 @@ class HangmanViewController: UIViewController {
         hangmanPhrases.guessed(letter: l)
         incorrectGuesses.text = hangmanPhrases.incorrect_letters
         correctGuess.text = hangmanPhrases.correct_letters
+        if (hangmanPhrases.win_status == true) {
+            let alert = UIAlertController(title: "UIAlertController", message: "You've won the game! Would you like to play again?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: newGameHandler))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        if (hangmanPhrases.num_guesses == 6) {
+            let alert = UIAlertController(title: "UIAlertController", message: "You've lost the game. Would you like to play again?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: newGameHandler))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func newGameHandler(alert: UIAlertAction!){
+        viewDidLoad()
+    }
+    
+    @IBAction func StartOver(_ sender: UIButton) {
+        viewDidLoad()
     }
     
     @IBAction func A(_ sender: UIButton) {
@@ -134,13 +158,15 @@ class HangmanViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         hangmanPhrases = HangmanPhrases()
         // Generate a random phrase for the user to guess
         let phrase: String = hangmanPhrases.getRandomPhrase()
         print(phrase)
         correctGuess.text = hangmanPhrases.correct_letters
-        
+        incorrectGuesses.text = hangmanPhrases.incorrect_letters
+        showGuess.text = hangmanPhrases.guessed_letter
+        images.image = UIImage(named: "hangman0.jpg")
+        //self.view.addSubview(images)
     }
 
     override func didReceiveMemoryWarning() {

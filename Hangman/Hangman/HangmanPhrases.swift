@@ -16,6 +16,8 @@ class HangmanPhrases {
     var incorrect_letters = "Incorrect Guesses: "
     var incorrect = ""
     var guessed_letter = ""
+    var num_guesses = 0
+    var win_status = false
     
     // Initialize HangmanPhrase with an array of all possible phrases of the Hangman game
     init() {
@@ -26,7 +28,7 @@ class HangmanPhrases {
     func putInGuessBox(s : String) {
         guessed_letter = s
     }
-    
+
     // Get random phrase from all available phrases
     func getRandomPhrase() -> String {
         let index = Int(arc4random_uniform(UInt32(phrases.count)))
@@ -47,10 +49,15 @@ class HangmanPhrases {
     }
     
     func guessed(letter: Character) {
-        if (word.characters.contains(letter)) {
-            insert(l: letter, s: correct_letters)
-        } else {
-            insert(l: letter, s: incorrect_letters)
+        if (num_guesses < 6) {
+            if (word.characters.contains(letter)) {
+                insert(l: letter, s: correct_letters)
+            } else {
+                if (!incorrect.characters.contains(letter)){
+                    num_guesses += 1
+                    insert(l: letter, s: incorrect_letters)
+                }
+            }
         }
     }
     
@@ -70,6 +77,9 @@ class HangmanPhrases {
                 incorrect.append(l)
                 incorrect_letters.append(l)
             }
+        }
+        if (word == correct_letters) {
+            win_status = true
         }
     }
     
