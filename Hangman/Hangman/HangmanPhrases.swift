@@ -13,12 +13,18 @@ class HangmanPhrases {
     var phrases : NSArray!
     var word = ""
     var correct_letters = ""
-    var incorrect_letters = ""
+    var incorrect_letters = "Incorrect Guesses: "
+    var incorrect = ""
+    var guessed_letter = ""
     
     // Initialize HangmanPhrase with an array of all possible phrases of the Hangman game
     init() {
         let path = Bundle.main.path(forResource: "phrases", ofType: "plist")
         phrases = NSArray.init(contentsOfFile: path!)
+    }
+    
+    func putInGuessBox(s : String) {
+        guessed_letter = s
     }
     
     // Get random phrase from all available phrases
@@ -60,7 +66,10 @@ class HangmanPhrases {
             }
             correct_letters = String(char_array)
         } else {
-            incorrect_letters.append(l)
+            if (!incorrect.characters.contains(l)) {
+                incorrect.append(l)
+                incorrect_letters.append(l)
+            }
         }
     }
     

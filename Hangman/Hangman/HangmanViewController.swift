@@ -10,168 +10,125 @@ import UIKit
 
 class HangmanViewController: UIViewController {
     var hangmanPhrases = HangmanPhrases()
-    var guessedChar = " "
+    //var guessedChar: Character
 
+    @IBOutlet weak var images: UIImageView!
     @IBOutlet weak var correctGuess: UILabel!
 
     @IBOutlet weak var incorrectGuesses: UILabel!
 
+    @IBOutlet weak var showGuess: UILabel!
 
-    @IBAction func A(_ sender: UIButton) {
-        let a = "a" as Character
-        hangmanPhrases.guessed(letter: a)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
-    }
-    @IBAction func B(_ sender: UIButton) {
-        let b = "b" as Character
-        hangmanPhrases.guessed(letter: b)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
-    }
-    @IBAction func C(_ sender: UIButton) {
-        let c = "c" as Character
-        hangmanPhrases.guessed(letter: c)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
-    }
-    @IBAction func D(_ sender: UIButton) {
-        let d = "d" as Character
-        hangmanPhrases.guessed(letter: d)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
-    }
-    @IBAction func E(_ sender: UIButton) {
-        let e = "e" as Character
-        hangmanPhrases.guessed(letter: e)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
-    }
-    @IBAction func F(_ sender: UIButton) {
-        let f = "f" as Character
-        hangmanPhrases.guessed(letter: f)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
-    }
-    @IBAction func G(_ sender: UIButton) {
-        let g = "g" as Character
-        hangmanPhrases.guessed(letter: g)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
-    }
-    @IBAction func H(_ sender: UIButton) {
-        let h = "h" as Character
-        hangmanPhrases.guessed(letter: h)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
-    }
-    @IBAction func I(_ sender: UIButton) {
-        let i = "i" as Character
-        hangmanPhrases.guessed(letter: i)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
-    }
-    @IBAction func J(_ sender: UIButton) {
-        let j = "j" as Character
-        hangmanPhrases.guessed(letter: j)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
-    }
-    @IBAction func K(_ sender: UIButton) {
-        let k = "k" as Character
-        hangmanPhrases.guessed(letter: k)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
-    }
-    @IBAction func L(_ sender: UIButton) {
-        let l = "l" as Character
+    @IBAction func wantsToGuess(_ sender: UIButton) {
+        let l = hangmanPhrases.guessed_letter.characters.first! as Character
         hangmanPhrases.guessed(letter: l)
         incorrectGuesses.text = hangmanPhrases.incorrect_letters
         correctGuess.text = hangmanPhrases.correct_letters
     }
+    
+    @IBAction func A(_ sender: UIButton) {
+        hangmanPhrases.putInGuessBox(s: "A")
+        showGuess.text = "Guess: A"
+    }
+    @IBAction func B(_ sender: UIButton) {
+        hangmanPhrases.putInGuessBox(s: "B")
+        showGuess.text = "Guess: B"
+    }
+    @IBAction func C(_ sender: UIButton) {
+        hangmanPhrases.putInGuessBox(s: "C")
+        showGuess.text = "Guess: C"
+    }
+    @IBAction func D(_ sender: UIButton) {
+        hangmanPhrases.putInGuessBox(s: "D")
+        showGuess.text = "Guess: D"
+    }
+    @IBAction func E(_ sender: UIButton) {
+        hangmanPhrases.putInGuessBox(s: "E")
+        showGuess.text = "Guess: E"
+    }
+    @IBAction func F(_ sender: UIButton) {
+        hangmanPhrases.putInGuessBox(s: "F")
+        showGuess.text = "Guess: F"
+    }
+    @IBAction func G(_ sender: UIButton) {
+        hangmanPhrases.putInGuessBox(s: "G")
+        showGuess.text = "Guess: G"
+    }
+    @IBAction func H(_ sender: UIButton) {
+        hangmanPhrases.putInGuessBox(s: "H")
+        showGuess.text = "Guess: H"
+    }
+    @IBAction func I(_ sender: UIButton) {
+        hangmanPhrases.putInGuessBox(s: "I")
+        showGuess.text = "Guess: I"
+    }
+    @IBAction func J(_ sender: UIButton) {
+        hangmanPhrases.putInGuessBox(s: "J")
+        showGuess.text = "Guess: J"
+    }
+    @IBAction func K(_ sender: UIButton) {
+        hangmanPhrases.putInGuessBox(s: "K")
+        showGuess.text = "Guess: K"
+    }
+    @IBAction func L(_ sender: UIButton) {
+        hangmanPhrases.putInGuessBox(s: "L")
+        showGuess.text = "Guess: L"
+    }
     @IBAction func M(_ sender: UIButton) {
-        let m = "m" as Character
-        hangmanPhrases.guessed(letter: m)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "M")
+        showGuess.text = "Guess: M"
     }
     @IBAction func N(_ sender: UIButton) {
-        let n = "n" as Character
-        hangmanPhrases.guessed(letter: n)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "N")
+        showGuess.text = "Guess: N"
     }
     @IBAction func O(_ sender: UIButton) {
-        let o = "o" as Character
-        hangmanPhrases.guessed(letter: o)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "O")
+        showGuess.text = "Guess: O"
     }
     @IBAction func P(_ sender: UIButton) {
-        let p = "p" as Character
-        hangmanPhrases.guessed(letter: p)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "P")
+        showGuess.text = "Guess: P"
     }
     @IBAction func Q(_ sender: UIButton) {
-        let q = "q" as Character
-        hangmanPhrases.guessed(letter: q)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "A")
+        showGuess.text = "Guess: Q"
     }
     @IBAction func R(_ sender: UIButton) {
-        let r = "r" as Character
-        hangmanPhrases.guessed(letter: r)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "R")
+        showGuess.text = "Guess: R"
     }
     @IBAction func S(_ sender: UIButton) {
-        let s = "s" as Character
-        hangmanPhrases.guessed(letter: s)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "S")
+        showGuess.text = "Guess: S"
     }
     @IBAction func T(_ sender: UIButton) {
-        let t = "t" as Character
-        hangmanPhrases.guessed(letter: t)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "T")
+        showGuess.text = "Guess: T"
     }
     @IBAction func U(_ sender: UIButton) {
-        let u = "u" as Character
-        hangmanPhrases.guessed(letter: u)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "U")
+        showGuess.text = "Guess: U"
     }
     @IBAction func V(_ sender: UIButton) {
-        let v = "v" as Character
-        hangmanPhrases.guessed(letter: v)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "V")
+        showGuess.text = "Guess: V"
     }
     @IBAction func W(_ sender: UIButton) {
-        let w = "w" as Character
-        hangmanPhrases.guessed(letter: w)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "W")
+        showGuess.text = "Guess: W"
     }
     @IBAction func X(_ sender: UIButton) {
-        let x = "x" as Character
-        hangmanPhrases.guessed(letter: x)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "X")
+        showGuess.text = "Guess: X"
     }
     @IBAction func Y(_ sender: UIButton) {
-        let y = "y" as Character
-        hangmanPhrases.guessed(letter: y)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "Y")
+        showGuess.text = "Guess: Y"
     }
     @IBAction func Z(_ sender: UIButton) {
-        let z = "z" as Character
-        hangmanPhrases.guessed(letter: z)
-        incorrectGuesses.text = hangmanPhrases.incorrect_letters
-        correctGuess.text = hangmanPhrases.correct_letters
+        hangmanPhrases.putInGuessBox(s: "Z")
+        showGuess.text = "Guess: Z"
     }
     
     
@@ -183,6 +140,7 @@ class HangmanViewController: UIViewController {
         let phrase: String = hangmanPhrases.getRandomPhrase()
         print(phrase)
         correctGuess.text = hangmanPhrases.correct_letters
+        
     }
 
     override func didReceiveMemoryWarning() {
