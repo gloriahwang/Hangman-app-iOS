@@ -39,6 +39,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63f-vu-jO4">
+                                <rect key="frame" x="150" y="338" width="85" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="qm7-u4-0EC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjE-Ua-Y2w">
+                                <rect key="frame" x="161" y="577" width="63" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="63" id="y2Q-N0-CCm"/>
+                                </constraints>
+                                <state key="normal" title="Guess!"/>
+                                <connections>
+                                    <action selector="wantsToGuess:" destination="33m-bG-32Y" eventType="touchUpInside" id="Iqt-v0-mJ9"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W80-6J-cTx">
+                                <rect key="frame" x="72" y="58" width="240" height="124"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oy-5k-Kwk">
+                                <rect key="frame" x="16" y="20" width="78" height="30"/>
+                                <state key="normal" title="Start Over"/>
+                                <connections>
+                                    <action selector="StartOver:" destination="33m-bG-32Y" eventType="touchUpInside" id="ayK-Ug-azV"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDL-3U-9cO">
                                 <rect key="frame" x="46" y="362" width="30" height="30"/>
                                 <state key="normal" title="A"/>
@@ -221,35 +250,6 @@
                                     <action selector="V:" destination="33m-bG-32Y" eventType="touchUpInside" id="lF6-ks-VrR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63f-vu-jO4">
-                                <rect key="frame" x="150" y="338" width="85" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="qm7-u4-0EC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjE-Ua-Y2w">
-                                <rect key="frame" x="161" y="577" width="63" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="63" id="y2Q-N0-CCm"/>
-                                </constraints>
-                                <state key="normal" title="Guess!"/>
-                                <connections>
-                                    <action selector="wantsToGuess:" destination="33m-bG-32Y" eventType="touchUpInside" id="Iqt-v0-mJ9"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W80-6J-cTx">
-                                <rect key="frame" x="72" y="58" width="240" height="124"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oy-5k-Kwk">
-                                <rect key="frame" x="16" y="20" width="78" height="30"/>
-                                <state key="normal" title="Start Over"/>
-                                <connections>
-                                    <action selector="StartOver:" destination="33m-bG-32Y" eventType="touchUpInside" id="ayK-Ug-azV"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -283,6 +283,7 @@
                             <constraint firstItem="qcm-dg-1bi" firstAttribute="leading" secondItem="BrP-Gh-fpH" secondAttribute="leading" id="Hcf-bh-IVu"/>
                             <constraint firstItem="Ubq-ZR-eve" firstAttribute="top" secondItem="UPp-cL-TRp" secondAttribute="bottom" constant="19" id="IHs-mC-lJd"/>
                             <constraint firstItem="Rkb-O3-rip" firstAttribute="top" secondItem="GjE-Ua-Y2w" secondAttribute="bottom" constant="60" id="K2B-gE-s1N"/>
+                            <constraint firstItem="63f-vu-jO4" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="134" id="KDy-8u-mtB"/>
                             <constraint firstItem="puX-SR-3ep" firstAttribute="baseline" secondItem="dhQ-DD-PQl" secondAttribute="baseline" id="LqP-7b-T1f"/>
                             <constraint firstItem="EDT-Lz-f0H" firstAttribute="leading" secondItem="8Iw-ze-nEe" secondAttribute="trailing" constant="11" id="MRm-dy-sdq"/>
                             <constraint firstItem="LF1-4G-pfo" firstAttribute="leading" secondItem="BQr-fc-mar" secondAttribute="trailing" constant="12" id="N3q-Na-F1M"/>
@@ -295,14 +296,17 @@
                             <constraint firstItem="JNP-Of-q5T" firstAttribute="baseline" secondItem="qcm-dg-1bi" secondAttribute="baseline" id="RPh-zb-fhu"/>
                             <constraint firstItem="y7X-jh-OJz" firstAttribute="leading" secondItem="N9x-9R-YrQ" secondAttribute="leading" id="RWE-Qq-cUU"/>
                             <constraint firstItem="BrP-Gh-fpH" firstAttribute="baseline" secondItem="S8i-jh-PsK" secondAttribute="baseline" id="SQ7-yv-hZQ"/>
+                            <constraint firstItem="HDL-3U-9cO" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="30" id="Tak-rf-2ua"/>
                             <constraint firstItem="QXs-YQ-GZm" firstAttribute="leading" secondItem="HDL-3U-9cO" secondAttribute="trailing" constant="11" id="U18-XX-LeO"/>
                             <constraint firstItem="EDT-Lz-f0H" firstAttribute="baseline" secondItem="BQr-fc-mar" secondAttribute="baseline" id="UHH-tV-t5I"/>
                             <constraint firstItem="UPp-cL-TRp" firstAttribute="top" secondItem="W80-6J-cTx" secondAttribute="bottom" constant="23" id="VNv-PH-K3w"/>
                             <constraint firstItem="Je8-E1-6QC" firstAttribute="leading" secondItem="eQW-Xr-Kjg" secondAttribute="leading" id="Vco-HP-qWw"/>
                             <constraint firstItem="HDL-3U-9cO" firstAttribute="baseline" secondItem="QXs-YQ-GZm" secondAttribute="baseline" id="XoB-i2-6r5"/>
                             <constraint firstItem="BQr-fc-mar" firstAttribute="baseline" secondItem="LF1-4G-pfo" secondAttribute="baseline" id="YjD-B4-eIa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LF1-4G-pfo" secondAttribute="trailing" constant="38" id="YyC-go-LnT"/>
                             <constraint firstItem="1oy-5k-Kwk" firstAttribute="top" secondItem="fga-sG-nzY" secondAttribute="bottom" id="ZET-GX-wju"/>
                             <constraint firstItem="eQW-Xr-Kjg" firstAttribute="leading" secondItem="S8i-jh-PsK" secondAttribute="leading" id="ZIy-or-UAK"/>
+                            <constraint firstItem="GjE-Ua-Y2w" firstAttribute="top" secondItem="63f-vu-jO4" secondAttribute="bottom" constant="218" id="ci5-Vj-igz"/>
                             <constraint firstItem="QXs-YQ-GZm" firstAttribute="baseline" secondItem="y7X-jh-OJz" secondAttribute="baseline" id="dLb-kR-oR8"/>
                             <constraint firstItem="BQr-fc-mar" firstAttribute="leading" secondItem="Je8-E1-6QC" secondAttribute="leading" id="dZC-Dg-0Ax"/>
                             <constraint firstItem="UPp-cL-TRp" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="30" id="e1Q-XQ-ZSD"/>
@@ -311,7 +315,7 @@
                             <constraint firstItem="W80-6J-cTx" firstAttribute="centerX" secondItem="63f-vu-jO4" secondAttribute="centerX" id="fbS-rf-K8v"/>
                             <constraint firstItem="8Iw-ze-nEe" firstAttribute="leading" secondItem="puX-SR-3ep" secondAttribute="leading" id="fr7-cz-eA0"/>
                             <constraint firstItem="63f-vu-jO4" firstAttribute="centerX" secondItem="GjE-Ua-Y2w" secondAttribute="centerX" id="gu7-VW-Kcr"/>
-                            <constraint firstItem="y7X-jh-OJz" firstAttribute="top" secondItem="63f-vu-jO4" secondAttribute="bottom" constant="3" id="nfw-97-qCh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="63f-vu-jO4" secondAttribute="trailing" constant="124" id="mqv-xT-8ko"/>
                             <constraint firstItem="xOI-Hj-VM4" firstAttribute="baseline" secondItem="BrP-Gh-fpH" secondAttribute="baseline" id="pO1-tA-neL"/>
                             <constraint firstItem="Je8-E1-6QC" firstAttribute="baseline" secondItem="g6m-Cq-mwA" secondAttribute="baseline" id="qJW-mH-ual"/>
                             <constraint firstItem="SC7-Bz-auB" firstAttribute="leading" secondItem="mj1-rk-zy9" secondAttribute="leading" id="qUK-q6-wqu"/>

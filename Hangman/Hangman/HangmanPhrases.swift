@@ -16,7 +16,7 @@ class HangmanPhrases {
     var incorrect_letters = "Incorrect Guesses: "
     var incorrect = ""
     var guessed_letter = ""
-    var num_guesses = 0
+    var num_wrong_guesses = 0
     var win_status = false
     
     // Initialize HangmanPhrase with an array of all possible phrases of the Hangman game
@@ -48,17 +48,19 @@ class HangmanPhrases {
         return word
     }
     
-    func guessed(letter: Character) {
-        if (num_guesses < 6) {
+    func guessed(letter: Character) -> Int{
+        if (num_wrong_guesses < 6) {
             if (word.characters.contains(letter)) {
                 insert(l: letter, s: correct_letters)
             } else {
                 if (!incorrect.characters.contains(letter)){
-                    num_guesses += 1
+                    num_wrong_guesses += 1
                     insert(l: letter, s: incorrect_letters)
+                    return 1
                 }
             }
         }
+        return 0
     }
     
     func insert(l: Character, s: String) {
@@ -76,6 +78,8 @@ class HangmanPhrases {
             if (!incorrect.characters.contains(l)) {
                 incorrect.append(l)
                 incorrect_letters.append(l)
+                
+                
             }
         }
         if (word == correct_letters) {
